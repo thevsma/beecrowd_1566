@@ -37,10 +37,18 @@ int partir(int arr[], int ini, int fim) {
 }
 
 void quicksort(int arr[], int ini, int fim) {
-    if (ini < fim) {
+    while (ini < fim) {
+        mediana(arr, ini, fim);
         int indice = partir(arr, ini, fim);
-        quicksort(arr, ini, indice - 1);
-        quicksort(arr, indice + 1, fim);
+
+        if (indice - ini < fim - indice) {
+            quicksort(arr, ini, indice - 1);
+            ini = indice + 1;
+        }
+        else {
+            quicksort(arr, indice + 1, fim);
+            fim = indice - 1;
+        }
     }
 }
 
