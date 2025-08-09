@@ -8,7 +8,7 @@ void trocar(int* a, int* b) {
 }
 
 void mediana(int arr[], int ini, int fim) {
-    int meio = ini + (ini + fim) / 2;
+    int meio = ini + (fim - ini) / 2;
 
     if (arr[ini] > arr[meio]) {
         trocar(&arr[ini], &arr[meio]);
