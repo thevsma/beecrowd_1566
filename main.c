@@ -70,8 +70,9 @@ int main() {
         quicksort(arr, 0, N - 1);
 
         for (int i = 0; i < N; i++) {
-            printf("%d ", arr[i]);
+            printf("%d%c", arr[i], i == N - 1 ? '\0' : ' ');
         }
+        printf("\n");
 
         free(arr);
         NC--;
