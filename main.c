@@ -7,6 +7,21 @@ void trocar(int* a, int* b) {
     *b = temp;
 }
 
+void mediana(int arr[], int ini, int fim) {
+    int meio = ini + (ini + fim) / 2;
+
+    if (arr[ini] > arr[meio]) {
+        trocar(&arr[ini], &arr[meio]);
+    }
+    if (arr[ini] > arr[fim]) {
+        trocar(&arr[ini], &arr[fim]);
+    }
+    if (arr[meio] > arr[fim]) {
+        trocar(&arr[meio], &arr[fim]);
+    }
+    trocar(&arr[meio], &arr[fim]);
+}
+
 int partir(int arr[], int ini, int fim) {
     int pivo = arr[fim], i = (ini - 1);
 
